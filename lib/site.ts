@@ -8,6 +8,9 @@ export const SITE = {
   phoneDisplay: "0322-4694065",
   whatsapp: "923224694065",
   address: "Batti Chowk, Ravi Road, Lahore, Punjab, Pakistan",
+  mapsUrl: "https://maps.google.com/?q=Batti+Chowk+Ravi+Road+Lahore",
+  mapsEmbedUrl:
+    "https://maps.google.com/maps?q=Batti+Chowk+Ravi+Road+Lahore&output=embed",
   facebook:
     "https://www.facebook.com/people/Malik-Law-Associates/100064188425186/",
   copyrightYear: 2024,
@@ -15,7 +18,7 @@ export const SITE = {
 
 export const TEAM = [
   {
-    name: "Malik Atif Qasim",
+    name: "Mr. Malik Atif Qasim",
     title: "Advocate High Court",
     specialization:
       "Tax Cases, Criminal Cases, Land & Property, Family Cases",
@@ -23,21 +26,21 @@ export const TEAM = [
     whatsapp: "https://wa.me/923224694065",
   },
   {
-    name: "Karam",
+    name: "Mr. Malik Karam Ellahi",
     title: "Advocate High Court",
     specialization: "Tax Cases, Criminal Cases, Land & Property",
     phone: "0302-4604844",
     whatsapp: "https://wa.me/923024604844",
   },
   {
-    name: "Arslan",
+    name: "Mr. Arslan",
     title: "Tax Consultant",
     specialization: "Income Tax, Sales Tax, FBR Matters",
     phone: "0324-0012517",
     whatsapp: "https://wa.me/923240012517",
   },
   {
-    name: "Asad",
+    name: "Mr. Asad",
     title: "Tax Consultant",
     specialization: "Income Tax, Sales Tax, FBR Matters",
     phone: "0323-4827404",

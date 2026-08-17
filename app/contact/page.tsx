@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import FacebookLink from "@/components/FacebookLink";
+import OfficeMap from "@/components/OfficeMap";
 import PageHeader from "@/components/PageHeader";
 import { SITE, telHref, whatsappHref } from "@/lib/site";
 
@@ -34,6 +35,7 @@ export default function ContactPage() {
               {SITE.lawyer}, {SITE.designation}
             </p>
             <p className="mt-4 break-words text-sm leading-6 text-ink/75">{SITE.address}</p>
+            <OfficeMap />
             <a
               href={telHref(SITE.phoneDisplay)}
               className="mt-4 block text-sm text-ink/80 hover:text-forest"

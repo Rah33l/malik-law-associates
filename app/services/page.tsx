@@ -5,7 +5,7 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Tax, criminal, and land & property advocacy by Malik Law Associates in Punjab, Pakistan.",
+    "Tax, criminal, land & property, and family advocacy by Malik Law Associates in Punjab, Pakistan.",
 };
 
 const areas = [
@@ -69,6 +69,42 @@ const areas = [
       },
     ],
   },
+  {
+    id: "family",
+    title: "Family Cases",
+    intro:
+      "Malik Law Associates provides expert legal counsel in all family matters under Pakistani family law.",
+    items: [
+      {
+        heading: "Divorce & Khula",
+        text: "Dissolution of marriage, khula petitions, and related proceedings in the Family Court.",
+      },
+      {
+        heading: "Child Custody & Guardianship",
+        text: "Custody, visitation, and guardianship applications before the Family Court and Guardian Court.",
+      },
+      {
+        heading: "Maintenance & Alimony",
+        text: "Claims for maintenance of wife, children, and dependants under the relevant family statutes.",
+      },
+      {
+        heading: "Marriage Registration",
+        text: "Nikah and marriage registration, and the paperwork needed to put the record in order.",
+      },
+      {
+        heading: "Inheritance & Succession",
+        text: "Shares under Muslim personal law, succession certificates, and related disputes.",
+      },
+      {
+        heading: "Family Property Disputes",
+        text: "Partition, title, and possession issues arising within the family.",
+      },
+      {
+        heading: "Dowry Recovery",
+        text: "Recovery of dowry articles and related claims in the family jurisdiction.",
+      },
+    ],
+  },
 ];
 
 export default function ServicesPage() {
@@ -77,7 +113,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Practice Areas"
         title="Legal Services"
-        description="Focused advocacy in three fields: tax, criminal law, and land & property. Each matter is prepared as if it will be tested in court."
+        description="Focused advocacy in tax, criminal law, land & property, and family matters. Each brief is prepared as if it will be tested in court."
       />
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 py-16 sm:px-6 lg:px-8">
@@ -90,7 +126,7 @@ export default function ServicesPage() {
             <p className="mt-4 max-w-3xl text-base leading-7 text-ink/80">
               {area.intro}
             </p>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
               {area.items.map((item) => (
                 <article
                   key={item.heading}

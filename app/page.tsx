@@ -18,6 +18,11 @@ const services = [
     title: "Land & Property Cases",
     text: "Title disputes, registry, mutations, and Punjab land-record matters from first notice to final decree.",
   },
+  {
+    href: "/services#family",
+    title: "Family Cases",
+    text: "Divorce, khula, custody, maintenance, inheritance, and other family-court matters under Pakistani law.",
+  },
 ];
 
 export default function Home() {
@@ -146,7 +151,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link
               key={service.title}

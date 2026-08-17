@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FacebookLink from "@/components/FacebookLink";
+import OfficeMap from "@/components/OfficeMap";
 import { NAV_LINKS, SITE, telHref } from "@/lib/site";
 
 export default function Footer() {
@@ -38,6 +39,7 @@ export default function Footer() {
             Chambers
           </p>
           <p className="mt-4 text-sm leading-6 text-cream/85">{SITE.address}</p>
+          <OfficeMap compact />
           <a
             href={telHref(SITE.phoneDisplay)}
             className="mt-3 block text-sm text-cream/85 transition hover:text-gold-light"
