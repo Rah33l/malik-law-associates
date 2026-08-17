@@ -26,21 +26,72 @@ export default function Home() {
       <section className="relative overflow-hidden bg-forest text-cream">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-20 opacity-[0.07]"
+          className="pointer-events-none absolute -right-8 top-8 text-gold opacity-[0.12] sm:-right-4 sm:top-0"
         >
-          <svg viewBox="0 0 240 240" className="h-[28rem] w-[28rem]">
+          <svg
+            viewBox="0 0 240 280"
+            className="h-[22rem] w-[19rem] sm:h-[32rem] sm:w-[28rem]"
+            fill="none"
+          >
+            <circle cx="120" cy="28" r="10" stroke="currentColor" strokeWidth="3" />
+            <path d="M120 38v18" stroke="currentColor" strokeWidth="4" />
+            <path d="M36 62h168" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+            <path d="M48 62v36M192 62v36" stroke="currentColor" strokeWidth="2" />
             <path
-              fill="currentColor"
-              d="M120 18c-4 0-8 3-8 8v18H86V32c0-5-4-8-8-8s-8 3-8 8v12H52c-5 0-8 4-8 8s3 8 8 8h18v12H52c-5 0-8 4-8 8s3 8 8 8h18v88c0 22 18 40 40 40h28c22 0 40-18 40-40V96h18c5 0 8-4 8-8s-3-8-8-8h-18V76h18c5 0 8-4 8-8s-3-8-8-8h-18V44h18c5 0 8-4 8-8s-3-8-8-8h-18V32c0-5-4-8-8-8s-8 3-8 8v12h-26V26c0-5-4-8-8-8Zm-8 70h16v88c0 13-11 24-24 24h-12c-13 0-24-11-24-24V88h44Z"
+              d="M28 98h40c0 18-9 32-20 32S28 116 28 98Z"
+              stroke="currentColor"
+              strokeWidth="3"
             />
+            <path
+              d="M172 98h40c0 18-9 32-20 32s-20-14-20-32Z"
+              stroke="currentColor"
+              strokeWidth="3"
+            />
+            <path d="M120 62v128" stroke="currentColor" strokeWidth="5" />
+            <path d="M78 190h84" stroke="currentColor" strokeWidth="6" />
+            <path d="M64 214h112" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-10 -left-8 text-cream opacity-[0.07] sm:bottom-6 sm:left-4"
+        >
+          <svg
+            viewBox="0 0 160 160"
+            className="h-40 w-40 sm:h-56 sm:w-56"
+            fill="currentColor"
+          >
+            <path d="M22 118c8 14 28 22 46 14 6-3 10-8 12-14l58-102 12 7L92 128c-4 8-12 14-22 18-26 10-54-2-66-22l18-6Z" />
+            <path d="M118 8h28l6 10-22 38-28-16 16-32Z" />
           </svg>
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute top-6 left-4 h-10 w-10 border-t border-l border-gold/40 sm:top-10 sm:left-6 lg:left-8"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-4 bottom-6 h-10 w-10 border-r border-b border-gold/40 sm:right-6 sm:bottom-10 lg:right-8"
+          />
+
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             {SITE.location}
           </p>
-          <h1 className="mt-5 max-w-3xl font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-6xl">
+
+          <div
+            className="mt-6 flex items-center gap-4 text-5xl leading-none sm:gap-6 sm:text-6xl"
+            aria-hidden="true"
+          >
+            <span>⚖️</span>
+            <span className="hidden h-10 w-px bg-gold/50 sm:block" />
+            <span>🇵🇰</span>
+            <span className="hidden h-10 w-px bg-gold/50 sm:block" />
+            <span>🔨</span>
+          </div>
+
+          <h1 className="mt-6 max-w-3xl font-serif text-3xl font-semibold leading-tight tracking-tight sm:mt-8 sm:text-6xl">
             {SITE.tagline}
           </h1>
           <div className="mt-6 h-px w-20 bg-gold" />
