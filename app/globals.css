@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f0e8;
+  --foreground: #1c241e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-forest: #1a3d2b;
+  --color-forest-deep: #12291d;
+  --color-forest-mid: #24503a;
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #e8dfd0;
+  --color-gold: #c4a35a;
+  --color-gold-light: #d4bc7d;
+  --color-ink: #1c241e;
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-sans), "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+::selection {
+  background: #1a3d2b;
+  color: #f5f0e8;
+}
