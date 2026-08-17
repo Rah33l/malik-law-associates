@@ -52,19 +52,6 @@ export default function Home() {
             <path d="M64 214h112" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
           </svg>
         </div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-10 -left-8 text-cream opacity-[0.07] sm:bottom-6 sm:left-4"
-        >
-          <svg
-            viewBox="0 0 160 160"
-            className="h-40 w-40 sm:h-56 sm:w-56"
-            fill="currentColor"
-          >
-            <path d="M22 118c8 14 28 22 46 14 6-3 10-8 12-14l58-102 12 7L92 128c-4 8-12 14-22 18-26 10-54-2-66-22l18-6Z" />
-            <path d="M118 8h28l6 10-22 38-28-16 16-32Z" />
-          </svg>
-        </div>
 
         <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
           <div
@@ -81,14 +68,27 @@ export default function Home() {
           </p>
 
           <div
-            className="mt-6 flex items-center gap-4 text-5xl leading-none sm:gap-6 sm:text-6xl"
+            className="mt-6 flex items-center gap-5 sm:mt-8 sm:gap-8"
             aria-hidden="true"
           >
-            <span>⚖️</span>
-            <span className="hidden h-10 w-px bg-gold/50 sm:block" />
-            <span>🇵🇰</span>
-            <span className="hidden h-10 w-px bg-gold/50 sm:block" />
-            <span>🔨</span>
+            <span className="text-6xl leading-none sm:text-8xl">⚖️</span>
+            <svg
+              viewBox="0 0 120 120"
+              className="h-16 w-16 text-gold sm:h-24 sm:w-24"
+              fill="currentColor"
+              role="img"
+              aria-label="Judge's gavel"
+            >
+              <rect x="8" y="98" width="78" height="14" rx="3" />
+              <rect x="20" y="90" width="54" height="10" rx="2" opacity="0.8" />
+              <g transform="rotate(-42 58 52)">
+                <rect x="52" y="36" width="12" height="58" rx="5" />
+                <rect x="48" y="48" width="20" height="7" rx="1.5" />
+                <rect x="32" y="18" width="52" height="30" rx="15" />
+                <rect x="36" y="22" width="8" height="22" rx="3" opacity="0.35" />
+                <rect x="72" y="22" width="8" height="22" rx="3" opacity="0.35" />
+              </g>
+            </svg>
           </div>
 
           <h1 className="mt-6 max-w-3xl font-serif text-3xl font-semibold leading-tight tracking-tight sm:mt-8 sm:text-6xl">
