@@ -41,7 +41,7 @@ function StarIcon() {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-5 w-5 fill-current"
+      className="h-5 w-5 fill-current text-gold"
     >
       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
     </svg>
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
               <QuoteIcon />
               <div className="mt-4 flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <StarIcon key={i} className="text-gold" />
+                  <StarIcon key={i} />
                 ))}
               </div>
               <p className="mt-4 font-subheading text-lg leading-relaxed text-forest">
