@@ -1,4 +1,7 @@
+"use client";
+
 import { TEAM, telHref } from "@/lib/site";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 function PhoneIcon() {
   return (
@@ -24,54 +27,86 @@ function WhatsAppIcon() {
   );
 }
 
-export default function TeamSection() {
-  return (
-    <section className="bg-forest text-cream">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold sm:tracking-[0.28em]">
-          The Chambers
-        </p>
-        <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">
-          Meet Our Team
-        </h2>
-        <div className="mt-4 h-px w-16 bg-gold" />
-        <p className="mt-4 max-w-2xl text-sm leading-6 text-cream/80">
-          Advocacy and tax consultancy under one roof — court work, FBR
-          matters, and day-to-day compliance.
-        </p>
+function getInitials(name: string): string {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-          {TEAM.map((member) => (
+export default function TeamSection() {
+  const [ref, isIntersecting] = useIntersectionObserver();
+
+  return (
+    <section ref={ref} className="bg-gradient-to-b from-cream to-cream-dark py-16 sm:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">
+            The Chambers
+          </p>
+          <h2 className="mt-3 font-serif text-3xl font-semibold text-forest sm:text-4xl">
+            Our Distinguished Team
+          </h2>
+          <div className="mx-auto mt-4 h-px w-16 bg-gold" />
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-forest/80">
+            Advocacy and tax consultancy under one roof — court work, FBR
+            matters, and day-to-day compliance.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+          {TEAM.map((member, index) => (
             <article
               key={member.name}
-              className="min-w-0 border border-gold/40 bg-forest-deep p-5 sm:p-7"
+              className="card-hover group relative overflow-hidden rounded-2xl border border-gold/30 bg-white p-6 sm:p-8"
+              style={{
+                opacity: isIntersecting ? 1 : 0,
+                transform: isIntersecting ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.6s ease-out ${index * 0.1}s`,
+              }}
             >
-              <div className="h-px w-10 bg-gold" />
-              <h3 className="mt-4 break-words font-serif text-xl sm:mt-5 sm:text-2xl">
+              {/* Avatar with gold gradient */}
+              <div className="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-gold to-gold-light shadow-lg">
+                <span className="font-serif text-3xl font-bold text-forest-deep">
+                  {getInitials(member.name)}
+                </span>
+                {/* Gold ring border with glow */}
+                <div className="absolute inset-0 rounded-full border-2 border-gold/50 group-hover:glow-gold transition-all duration-300" />
+              </div>
+
+              <h3 className="break-words text-center font-serif text-xl font-semibold text-forest sm:text-2xl">
                 {member.name}
               </h3>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-gold sm:tracking-[0.18em]">
+              <p className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gold sm:tracking-[0.18em]">
                 {member.title}
               </p>
-              <p className="mt-4 text-sm leading-6 text-cream/80">
+              <p className="mt-4 text-center text-sm leading-6 text-forest/80">
                 {member.specialization}
               </p>
-              <a
-                href={telHref(member.phone)}
-                className="mt-5 flex min-h-11 items-center gap-2 text-sm text-cream transition hover:text-gold"
-              >
-                <PhoneIcon />
-                <span className="break-all">{member.phone}</span>
-              </a>
-              <a
-                href={member.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1ebe57]"
-              >
-                <WhatsAppIcon />
-                WhatsApp
-              </a>
+              
+              <div className="mt-6 space-y-3">
+                <a
+                  href={telHref(member.phone)}
+                  className="flex items-center justify-center gap-2 rounded-lg border border-forest/20 px-4 py-3 text-sm font-semibold text-forest transition-all hover:border-gold hover:bg-gold/10 hover:text-gold"
+                >
+                  <PhoneIcon />
+                  <span className="break-all">{member.phone}</span>
+                </a>
+                <a
+                  href={member.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 px-4 py-3 text-sm font-semibold text-white transition-all hover:from-green-600 hover:to-green-700 hover:glow-teal"
+                >
+                  <WhatsAppIcon />
+                  WhatsApp
+                </a>
+              </div>
+
+              {/* Colorful shadow on hover */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-purple/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </article>
           ))}
         </div>

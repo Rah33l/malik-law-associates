@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -12,9 +12,15 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-source-sans",
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -31,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${sourceSans.variable} h-full antialiased`}
+      className={`${playfair.variable} ${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream font-sans text-ink">
         <Navbar />
